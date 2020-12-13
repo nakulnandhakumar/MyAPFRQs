@@ -7,7 +7,8 @@ public class Andrew {
   String resultSeq = gradShow.insertSegment("1111 1111",4);
   
 }
- class LightSequence
+
+class LightSequence
 
 {
 
@@ -20,7 +21,7 @@ the light display
 
 public LightSequence(String seq)
 
-{ / implementation not shown / }
+{ // implementation not shown // }
 
 /** Inserts the string segment in the current sequence,
 
@@ -29,7 +30,7 @@ starting at the index ind. Returns the new sequence.
 
 public String insertSegment(String segment, int ind)
 
-{ / implementation not shown / }
+{ // implementation not shown // }
 
 /** Updates the sequence to the value in seq
 
@@ -37,7 +38,7 @@ public String insertSegment(String segment, int ind)
 
 public void changeSequence(String seq)
 
-{ / implementation not shown / }
+{ // implementation not shown // }
 
 /** Uses the current sequence to turn the light on and off
 
@@ -61,7 +62,7 @@ System.out.println("sorry substring wasnt found in the orginal string");
 return;
 }
 }
-   //double a vertical
+  //double a vertical
 //double b horizontal
 public void printStraight-line(double a, double b)
 {
