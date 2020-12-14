@@ -7,6 +7,7 @@ public class Nakul {
 
 
 class LightSequenceN {
+
     private String seq;
 
     /** The parameter seq is the initial sequence used for the light display **/
@@ -29,7 +30,6 @@ class LightSequenceN {
     private void displayN() {
         /* implementation not shown */
     }
-
     /** (e) Assume that the string oldSeq has been properly declared and initialized and contains the string segment.
      Write a code segment that will remove the first occurrence of segment from oldSeq and store it in the string newSeq.
      Consider the following examples.
@@ -39,20 +39,17 @@ class LightSequenceN {
      If oldSeq is "1100000111" and segment is "00", then "11000111" should be stored in newSeq.
      Write the code segment below. Your code segment should meet all specifications and conform to the examples. **/
     private String removeSegmentN(String oldSeq, String segment){
-        int segmentExists = oldSeq.indexOf(segment);
-        String newSeq = new String();
+        int segmentExists = oldSeq.indexOf(segment); // Check is segment exists in oldSeq
+        String newSeq = new String(); // Instantiates new String variable newSeq
         if (segmentExists != -1){
-            try {
-                newSeq = oldSeq.replaceFirst(segment, "");
-            }
-            catch ( NullPointerException e) {
-                System.out.println("NullPointerException Caught");
-            }
+            newSeq = oldSeq.replaceFirst(segment, "");  // In-built function to replace first occurrence of "segment" variable
+                                                                   // with the replacement specified
         }
         else {
-            System.out.println("Given segment does not exist in oldSeq. Assigning oldSeq to newSeq...");
+            System.out.println("Given segment does not exist in oldSeq. Assigning oldSeq to newSeq..."); // Prints this statement if the user inputted segment
+                                                                                                         // doesn't exist in oldSeq
         }
-        return newSeq;
+        return newSeq; // returns the newSeq with removed segment
     }
 
     /** (f) Two lights will be arranged on a two-dimensional plane.
@@ -62,19 +59,19 @@ class LightSequenceN {
      square root of the quantity a squared plus b squared.
      Write a code segment that prints the straight-line distance between the two lights according to the formula above **/
     private double distanceBetweenLights(double a, double b){
-        double distance = Math.sqrt( Math.pow(a, 2) + Math.pow(b, 2) );
-        return distance;
+        double distance = Math.sqrt( Math.pow(a, 2) + Math.pow(b, 2) ); // Basic distance formula implementation
+        return distance; // returning the distance variable calculated above
     }
 
     /** Driver Code to test if answers are right **/
     public static void main (String[] args){
-        String oldSeq = "1100000111";
-        String newSeq;
-        double straightLineDistance;
+        String oldSeq = "1100000111";  // initializing local variable oldSeq
+        String newSeq; // Initializing local newSeq variable
+        double straightLineDistance; // Initializing variable for assigning value from distance equation to
 
-        /** (a) Write a statement to create a Unit2.LightSequenceN object gradShow that has the initial light sequence "0101 0101 0101".
+        /** (a) Write a statement to create a LightSequenceN object gradShow that has the initial light sequence "0101 0101 0101".
          Write the statement below. **/
-        LightSequenceN gradshow = new LightSequenceN("0101 0101 0101");
+        LightSequenceN gradshow = new LightSequenceN("0101 0101 0101"); // Creating new object gradshow of LightSequence
         System.out.println(gradshow.seq);
 
         /** (b) Write a statement that will call the display method to display the light sequence for the gradShow object.
