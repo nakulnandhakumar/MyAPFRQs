@@ -1,72 +1,77 @@
 package Unit2;
+import java.util.*;
+import java.math.*;
+public class AndrewUnit2 {
 
-public class Andrew { 
-  LightSequence gradShow = new LightSequence("0101 0101 0101");
-  gradShow.display();
-  gradShow.changeSequence("0011 0011 0011");
-  String resultSeq = gradShow.insertSegment("1111 1111",4);
+  public static void main(String[] args)
+  {
+    LightSequence gradShow = new LightSequence("0101 0101 0101");
+    gradShow.display();
+    gradShow.changeSequence("0011 0011 0011");
+    String resultSeq = gradShow.insertSegment("1111 1111",4);
+    System.out.println(resultSeq);
+    gradShow.remove(gradShow.seq, "01");
+    System.out.println(gradShow.seq);
+    System.out.println(gradShow.newSeq);
+    System.out.println(gradShow.seq);
+    gradShow.printStraightline(4.0,2.0);
+  }
+
   
 }
 
 class LightSequence
 
 {
+  String seq;
+  String newSeq;
 
-// attributes not shown
-
-/** The parameter seq is the initial sequence used for
-
-the light display
-*/
 
 public LightSequence(String seq)
-
-{ // implementation not shown // }
-
-/** Inserts the string segment in the current sequence,
-
-starting at the index ind. Returns the new sequence.
-*/
+{
+  this.seq = seq;
+}
 
 public String insertSegment(String segment, int ind)
 
-{ // implementation not shown // }
+{ // implementation not shown
+          String local = this.seq;
+          String temp = local.substring(0,ind);
+          local = temp.concat(segment+local);
+    return local;
+  }
 
-/** Updates the sequence to the value in seq
 
-*/
 
 public void changeSequence(String seq)
 
-{ // implementation not shown // }
-
-/** Uses the current sequence to turn the light on and off
-
-for the show
-*/
-
+{ // implementation not shown
+}
 public void display()
-
-{ / implementation not shown / }
-public void String remove(String oldSeq, String segment)
+{
+  System.out.println(seq);
+}
+public void remove(String oldSeq, String segment)
 {
 int start = oldSeq.indexOf(segment);
-If(start!=-1)
+if (start!=-1)
 {
-this.newSeq = oldSeq.substring(start,segment.length()+start);
-return;
+//this.newSeq = oldSeq.substring(start,start+segment.length()); if you want the removed section
+  this.newSeq = oldSeq.substring(0,start);
+  this.newSeq = this.newSeq.concat(oldSeq.substring(start+segment.length()));
+
 }
 else
 {
-System.out.println("sorry substring wasnt found in the orginal string");
-return;
+System.out.println("sorry substring wasn't found in the original string");
 }
+  return;
 }
   //double a vertical
 //double b horizontal
-public void printStraight-line(double a, double b)
+public void printStraightline(double a, double b)
 {
-double display = Math.sqrt(((Math.pow(a,2))+(Math.pow(b,2))))
+double display = Math.sqrt(((Math.pow(a,2))+(Math.pow(b,2))));
 System.out.println("The straight line distance is: "+display);
 }
 }
