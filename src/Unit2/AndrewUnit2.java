@@ -51,7 +51,7 @@ public void display()
 public void String remove(String oldSeq, String segment)
 {
 int start = oldSeq.indexOf(segment);
-If(start!==-1)
+If(start!=-1)
 {
 this.newSeq = oldSeq.substring(start,segment.length()+start);
 return;
