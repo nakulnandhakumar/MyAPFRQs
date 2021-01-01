@@ -29,7 +29,7 @@ class Party {
 
     /** (a)   Write a code segment that prints "attending" if rsvp is true and prints "not attending" otherwise.
      Write the code segment below. **/
-    public void attendance(boolean rsvp) {
+    public void attendance(boolean rsvp) { // Simple if statement that executes functions if true is returned and executes the else if none is true
         if (rsvp) {
             System.out.println("attending");
         }
@@ -41,7 +41,7 @@ class Party {
     /** (b)   Write a code segment that prints the food item associated with selection.
      For example, if selection is 3, the code segment should print "pasta".
      Write the code segment below. Your code segment should meet all specifications and conform to the example. **/
-    public void foodTypes(int selection) {
+    public void foodTypes(int selection) {  // simple If statement for recognizing selection
         if (selection == 1) {
             System.out.println("beef");
         }
@@ -50,6 +50,9 @@ class Party {
         }
         else if (selection == 3) {
             System.out.println("pasta");
+        }
+        else {
+            System.out.println("fish");
         }
     }
 
@@ -64,16 +67,19 @@ class Party {
      "Sorry you can't make it."
      Write the code segment below. Your code segment should meet all specifications and conform to the examples. **/
 
-    public void foodSelection() {
+    public void foodSelection() {  // simple nested if statement, just follow the if statements and elses
         if (rsvp) {
             if (selection == 1){
                 option1 = "Thanks for attending. You will be served beef.";
             }
-            if (selection == 2){
+            else if (selection == 2){
                 option1 = "Thanks for attending. You will be served chicken.";
             }
-            if (selection == 3){
+            else if (selection == 3){
                 option1 = "Thanks for attending. You will be served pasta.";
+            }
+            else {
+                System.out.println("Thanks for attending. You will be served fish.");
             }
         }
         else {
@@ -83,7 +89,7 @@ class Party {
 
     /** (d)   Write a code segment that will print true if the strings option1 and option2 contain the same values and will print false otherwise.
      Write the code segment below. **/
-    public void stringComparison (String option1, String option2) {
+    public void stringComparison (String option1, String option2) {  // simple string comparison and if else statement
         if (option1.equals(option2)) {
             System.out.println("true");
         }
@@ -101,6 +107,7 @@ class Party {
         In writing solutions for each question, you may use any of the accessible methods that are listed in classes defined in that question.
         Writing significant amounts of code that can be replaced by a call to one of these methods will not receive full credit.
         This question involves the Draw class, which is used to draw line segments and squares on a  10 -by- 10   xy -coordinate grid. **/
+
 class Draw
 {
 
@@ -119,7 +126,7 @@ class Draw
      * at the coordinate (x, y) and the side length of the
      * square will be len (or as large as will fit in the grid).
      */
-    public void drawSquare(int x, int y, int len) {
+    public void drawSquare(int x, int y, int len) {  // Just calling drawLine in logical order with logical parameters to draw lines between different points to make a square
         drawLine(x, y, x, y-len);
         drawLine(x, y-len, x+len, y-len);
         drawLine(x+len, y-len, x+len, y);
