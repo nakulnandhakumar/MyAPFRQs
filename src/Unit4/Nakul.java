@@ -3,6 +3,49 @@ package Unit4;
 public class Nakul {
 }
 
+    /** QUESTION #1 **/
+
+    /** The method longestStreak is intended to determine the longest substring of consecutive identical characters in the parameter str and print the result.
+        For example, the call longestStreak("CCAAAAATTT!") should print the result "A 5" because the longest substring of consecutive identical characters is "AAAAA". **/
+
+class Consecutive{
+
+    public Consecutive() { // Default constructor so as to not return any erros
+    }
+
+    public void longestStreak(String str) {
+        int temp = 0;
+        String character = "";
+        int length = str.length();
+        int totalConsecutive = 0;
+
+        for (int i = 0; i < length-1; i++) {
+            String first = str.substring(i, i+1);
+            String second = str.substring(i+1, i+2);
+
+            if (first.equals(second)){
+                temp++;
+            }
+            else {
+                temp++;
+                if (temp > totalConsecutive) {
+                    totalConsecutive = temp;
+                    temp = 0;
+                    character = first;
+                }
+            }
+
+        }
+        System.out.println(character + " " + totalConsecutive);
+    }
+
+    public static void main (String[] args){
+        Consecutive consecutive = new Consecutive();
+        consecutive.longestStreak("GGSJJJFKKASKASKASSSSSS");
+    }
+
+}
+
     /** QUESTION #2 **/
 
     /** This question involves a simulation of a two-player game.
@@ -13,7 +56,7 @@ public class Nakul {
         Off-by-two rule: If the players do not spend the same number of coins and the positive difference between the number of coins spent by the two players is 2, player 1 is awarded 2 coins.
         The game ends when the specified number of rounds have been played or when a player’s coin count is less than 3 at the end of a round. **/
 
- class CoinGame {
+class CoinGame {
 
     private int startingCoins; // starting number of coins
     private int maxRounds; // maximum number of rounds played
@@ -92,7 +135,7 @@ public class Nakul {
             Player2Move = getPlayer2Move(round);   // Gets the coins that player 2 spends for that round
 
             // The bottom set of "if statements" calculates the positive different between how much each player spends
-            // and then depending on whether it is 1, 2, or 3, executes different operations while calculating
+            // and then depending on whether it is 0, 1, or 2, executes different operations while calculating
             // the final total of each players coins at the end of the round.
             if (Math.abs(Player1Move - Player2Move) == 0) {
                 CoinsP1 = CoinsP1 - Player1Move;
