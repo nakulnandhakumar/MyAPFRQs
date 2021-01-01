@@ -1,5 +1,7 @@
 package Unit3.Andrew;
 
+import org.jetbrains.annotations.Contract;
+
 import java.util.Random;
 
 public class Andrew {
@@ -49,6 +51,7 @@ class Party
             default: System.out.println("fish");
         }
     }
+
     private String Rvsp(boolean rv, int option)
     {
         if (rv)
