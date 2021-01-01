@@ -17,28 +17,81 @@ public class Nakul {
         a String variable named option1
         a String variable named option2 **/
 
+class Party {
+
+    boolean rsvp; // For convenience, I have decided to initialize this as true so no errors are returned if I use this variable as a parameter
+    int selection;
+    String option1;
+    String option2;
+
+    public Party() { // default constructor of class Party is initialized here so no errors are returned
+    }
+
     /** (a)   Write a code segment that prints "attending" if rsvp is true and prints "not attending" otherwise.
-              Write the code segment below. **/
+     Write the code segment below. **/
+    public void attendance(boolean rsvp) {
+        if (rsvp) {
+            System.out.println("attending");
+        }
+        else {
+            System.out.println("not attending");
+        }
+    }
 
     /** (b)   Write a code segment that prints the food item associated with selection.
-              For example, if selection is 3, the code segment should print "pasta".
-              Write the code segment below. Your code segment should meet all specifications and conform to the example. **/
+     For example, if selection is 3, the code segment should print "pasta".
+     Write the code segment below. Your code segment should meet all specifications and conform to the example. **/
+    public void foodTypes(int selection) {
+        if (selection == 1) {
+            System.out.println("beef");
+        }
+        else if (selection == 2) {
+            System.out.println("chicken");
+        }
+        else if (selection == 3) {
+            System.out.println("pasta");
+        }
+    }
 
     /** (c)   Write a code segment that will store a dinner selection in option1 based on the values of rsvp and selection.
-              The intended behavior of the code segment is described below.
-              If rsvp is true, the code segment should store in option1 a string indicating the person’s attendance and food choice.
-              For example, if rsvp is true and selection is 1, the following string should be stored in option1.
-              "Thanks for attending. You will be served beef."
-              If rsvp is false, the following string should be stored in option1, regardless of the value of selection.
-              "Sorry you can't make it."
-              Write the code segment below. Your code segment should meet all specifications and conform to the examples. **/
+     The intended behavior of the code segment is described below.
+
+     If rsvp is true, the code segment should store in option1 a string indicating the person’s attendance and food choice.
+     For example, if rsvp is true and selection is 1, the following string should be stored in option1.
+     "Thanks for attending. You will be served beef."
+
+     If rsvp is false, the following string should be stored in option1, regardless of the value of selection.
+     "Sorry you can't make it."
+     Write the code segment below. Your code segment should meet all specifications and conform to the examples. **/
+
+    public void foodSelection() {
+        if (rsvp) {
+            if (selection == 1){
+                option1 = "Thanks for attending. You will be served beef.";
+            }
+            if (selection == 2){
+                option1 = "Thanks for attending. You will be served chicken.";
+            }
+            if (selection == 3){
+                option1 = "Thanks for attending. You will be served pasta.";
+            }
+        }
+        else {
+            System.out.println("Sorry you can't make it.");
+        }
+    }
 
     /** (d)   Write a code segment that will print true if the strings option1 and option2 contain the same values and will print false otherwise.
-              Write the code segment below. **/
-
-
-
-
+     Write the code segment below. **/
+    public void stringComparison (String option1, String option2) {
+        if (option1.equals(option2)) {
+            System.out.println("true");
+        }
+        else {
+            System.out.println("false");
+        }
+    }
+}
 
 
        /** Question #2 **/
