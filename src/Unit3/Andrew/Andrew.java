@@ -1,9 +1,10 @@
 package Unit3.Andrew;
 
+import java.util.Random;
+
 public class Andrew {
 }
 
-/** Question #1 **/
 /** SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.
 
  Assume that the classes listed in the Java Quick Reference have been imported where appropriate.
@@ -22,10 +23,57 @@ class Party
 {
     Party()
     {
+        Random random = new Random();
+        int selection= random.nextInt(3)+1;
         String option1;
-        Boolean rsvp;
+        Boolean rsvp=true; // just because
         String option2;
     }
+    //part a
+    private void attending(boolean rv)
+    {
+        if (rv)
+        {
+            System.out.println("Attending");
+        }
+        else
+            System.out.println("Not attending");
+    }
+    private void selctionFood(int Food)
+    {
+        switch (Food)
+        {
+            case 1: System.out.println("beef"); break;
+            case 2: System.out.println("chicken"); break;
+            case 3: System.out.println("pasta");break;
+            default: System.out.println("fish");
+        }
+    }
+    private String Rvsp(boolean rv, int option)
+    {
+        if (rv)
+        {
+            switch (option)
+            {
+                case 1: return "Thanks for attending. You will be served beef.";
+                case 2: return "Thanks for attending. You will be served chicken.";
+                case 3: return "Thanks for attending. You will be served pasta.";
+                default: return "Thanks for attending. you will be served with fish.";
+            }
+        }
+        else
+        {
+            return "Sorry that you cant make it";
+        }
+    }
+
+
+
+
+
+
+
+
 
 }
 
