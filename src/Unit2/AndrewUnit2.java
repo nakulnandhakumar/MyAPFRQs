@@ -8,6 +8,7 @@ public class AndrewUnit2 {
     LightSequence gradShow = new LightSequence("0101 0101 0101");
     gradShow.display();
     gradShow.changeSequence("0011 0011 0011");
+    gradShow.display();
     String resultSeq = gradShow.insertSegment("1111 1111",4);
     System.out.println(resultSeq);
     gradShow.remove(gradShow.seq, "01");
@@ -45,7 +46,8 @@ public String insertSegment(String segment, int ind)
 
 public void changeSequence(String seq)
 
-{ // implementation not shown
+{
+  this.seq =seq;
 }
 public void display()
 {
