@@ -18,12 +18,24 @@ class Consecutive{
         String character = "";
         int length = str.length();
         int totalConsecutive = 0;
+        String first;
+        String second;
 
-        for (int i = 0; i < length-1; i++) {
-            String first = str.substring(i, i+1);
-            String second = str.substring(i+1, i+2);
+        for (int i = 0; i <= length; i++) {
+            if ((length - i) == 0) {
+                first = str.substring(i);
+                second = str.substring(i);
+            }
+            else if ((length - i) == 1) {
+                first = str.substring(i, i+1);
+                second = str.substring(i+1);
+            }
+            else {
+                first = str.substring(i, i+1);
+                second = str.substring(i+1, i+2);
+            }
 
-            if (first.equals(second)){
+            if (first.equals(second)) {
                 temp++;
             }
             else {
@@ -39,7 +51,7 @@ class Consecutive{
         System.out.println(character + " " + totalConsecutive);
     }
 
-    public static void main (String[] args){
+    public static void main (String[] args) {
         Consecutive consecutive = new Consecutive();
         consecutive.longestStreak("GGSJJJFKKASKASKASSSSSS");
     }
