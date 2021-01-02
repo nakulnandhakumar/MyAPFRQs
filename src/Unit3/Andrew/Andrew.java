@@ -58,11 +58,12 @@ class Party
         {
             switch (option)
             {
-                case 1: return "Thanks for attending. You will be served beef.";
+                case 1: return "Thanks for attending. You will be served beef.\n";
                 case 2: return "Thanks for attending. You will be served chicken.";
                 case 3: return "Thanks for attending. You will be served pasta.";
                 default: return "Thanks for attending. you will be served with fish.";
             }
+
         }
         else
         {
@@ -70,6 +71,15 @@ class Party
         }
     }
 
+    public void stringComparison (String option1, String option2) {
+        if (option1.equals(option2)) {
+            System.out.println("true");
+        }
+        else {
+            System.out.println("false");
+        }
+
+    }
 
 
 
@@ -81,10 +91,6 @@ class Party
 }
 
 
-
-
-
-/** Question #2 **/
 /** SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.
  Assume that the classes listed in the Java Quick Reference have been imported where appropriate.
  Unless otherwise noted in the question, assume that parameters in method calls are not null and that methods are called only when their preconditions are satisfied.
