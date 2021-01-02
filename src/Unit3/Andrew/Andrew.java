@@ -28,8 +28,13 @@ class Party
         Random random = new Random();
         int selection= random.nextInt(3)+1;
         String option1;
-        Boolean rsvp=true; // just because
-        String option2;
+        boolean rsvp= random.nextBoolean();
+        String option2 = getOptionTwo(random.nextInt(4)); //0-3
+        attending(rsvp);
+        selctionFood(selection);
+       option1= Rvsp(rsvp,selection);
+       stringComparison(option1,option2);
+
     }
     //part a
     private void attending(boolean rv)
@@ -80,6 +85,16 @@ class Party
         }
 
     }
+    private String getOptionTwo(int number)
+    {
+        return switch (number) {
+            case 1 -> "Thanks for attending. You will be served beef.";
+            case 2 -> "Thanks for attending. You will be served chicken.";
+            case 3 -> "Thanks for attending. You will be served pasta.";
+            default -> "Thanks for attending. you will be served with fish.";
+        };
+    }
+
 
 
 
