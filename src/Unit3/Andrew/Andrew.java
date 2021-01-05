@@ -144,7 +144,7 @@ class Draw
         drawLine(x+len, y-len, x+len, y);
         drawLine(x+len, y, x, y);
         System.out.println("the area is " + len*len);
-        System.out.println("the perimeter is " + len*4);
+        System.out.println("the length is " + len);
     }
 
 }
