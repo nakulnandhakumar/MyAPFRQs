@@ -131,10 +131,20 @@ class Draw
      * square will be len (or as large as will fit in the grid).
      */
     public void drawSquare(int x, int y, int len) {
+     if(len>y && y<=(10-x)
+        {
+         len =y;
+        }
+        if(len>(10-x) && (10-x)<=y)
+        {
+         len = 10-x;
+        }
         drawLine(x, y, x, y-len);
         drawLine(x, y-len, x+len, y-len);
         drawLine(x+len, y-len, x+len, y);
         drawLine(x+len, y, x, y);
+        System.out.println("the area is " + len*len);
+        System.out.println("the perimeter is " + len*4);
     }
 
 }
