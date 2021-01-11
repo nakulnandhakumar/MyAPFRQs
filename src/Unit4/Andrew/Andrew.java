@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Andrew {
     public static void main(String[] args) {
-        LongStreak longStreak = new LongStreak("tee!"); // given test case CCAAAAATTT!
+        LongStreak longStreak = new LongStreak("CCAAAAATTT!"); // given test case CCAAAAATTT!
         CoinGame coinGame = new CoinGame(10,5);
 
     }
@@ -14,11 +14,47 @@ public class Andrew {
 class LongStreak
 {
     String streak;
+    int lastsum;
+    char index;
     LongStreak(String pass)
     {
         this.streak = pass;
         Consecutive();
+        Driver();
     }
+    private void Driver()
+    {
+        index =' ';
+        lastsum=0;
+        int postion =0;
+        int currentsum = 1;
+        Rec(streak.length(),postion,currentsum);
+        System.out.println(lastsum + " " + index);
+    }
+
+    private void Rec(int length , int postion , int currentsum)
+    {
+        if (length == 1)
+        {
+            return;
+        }
+        if (streak.charAt(postion)==streak.charAt(postion+1))
+        {
+            currentsum++;
+            if (currentsum>lastsum)
+            {
+                index = streak.charAt(postion);
+            }
+
+        }
+        else
+        {
+            currentsum=1;
+        }
+        lastsum = Math.max(currentsum, lastsum);
+        Rec(length-1, postion+1, currentsum);
+    }
+
     private void Consecutive()
     {
         int currentsum= 1;
@@ -55,13 +91,10 @@ class CoinGame
 
 
     public CoinGame(int s, int r) // constructor provided  by collage board
-
     {
-
         startingCoins = s;
         maxRounds = r;
         playGame();
-
     }
 
 
@@ -84,9 +117,8 @@ class CoinGame
 
 
     /** Returns the number of coins (1, 2, or 3) that player 2 will spend, as described in part (a).
-
+     * @param round int value that represent the current round
      */
-
     public int getPlayer2Move(int round)
     {
 

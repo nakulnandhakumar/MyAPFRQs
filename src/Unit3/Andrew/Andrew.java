@@ -129,7 +129,7 @@ class Draw
      * square will be len (or as large as will fit in the grid).
      */
     public void drawSquare(int x, int y, int len) {
-     if(len>y && y<=(10-x)
+     if(len>y && y<=(10-x))
         {
          len =y;
         }
