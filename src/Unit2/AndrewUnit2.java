@@ -61,13 +61,12 @@ if (start!=-1)
 //this.newSeq = oldSeq.substring(start,start+segment.length()); if you want the removed section
   this.newSeq = oldSeq.substring(0,start);
   this.newSeq = this.newSeq.concat(oldSeq.substring(start+segment.length()));
-  return;
 }
 else
 {
 System.out.println("sorry substring wasn't found in the original string");
-  return;
 }
+  return;
 
 }
   //double a vertical

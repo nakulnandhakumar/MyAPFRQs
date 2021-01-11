@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Andrew {
     public static void main(String[] args) {
-        LongStreak longStreak = new LongStreak("CCAAAAATTT!");
+        LongStreak longStreak = new LongStreak("tee!"); // given test case CCAAAAATTT!
         CoinGame coinGame = new CoinGame(10,5);
 
     }
@@ -17,29 +17,28 @@ class LongStreak
     LongStreak(String pass)
     {
         this.streak = pass;
-        Consectuive();
+        Consecutive();
     }
-    private void Consectuive()
+    private void Consecutive()
     {
         int currentsum= 1;
         int prevsum =0;
         char index = ' '; // set to a space character, use '' for chars
         for (int i=0; i<streak.length()-1;i++) //breaks when it reaches the last index
         {
-            if (streak.charAt(i) == streak.charAt(i+1)) // breaks the string into chars, the == works like boolean case instead of a int return
+            if (streak.charAt(i) == streak.charAt(i+1)) // breaks the string into chars, the == works like boolean case instead of an int return
             {
-
                 currentsum++; // if true it adds one to the currentsum
-                if (prevsum<currentsum) // this checks if the prev sum is least then current sum and figures out what character it should print at the end
+                if (prevsum<currentsum) // this checks if the prev sum is less then current sum and figures out what character it should print at the end
                 {
                     index=  streak.charAt(i); // sets the char to the current index
                 }
             }
             else
             {
-                currentsum=1; // reset the current sum to one to show a single character
+                currentsum=1; // reset the current sum to one to represent a single character
             }
-            prevsum = Math.max(currentsum,prevsum); // use a in built function to see if prevsum is greater than currentsum if current sum is greater it sets prev sum to the current sum
+            prevsum = Math.max(currentsum,prevsum); // use a in built function to see if prevsum is greater than currentsum, if current sum is greater it sets prev sum to the current sum
         }
         System.out.println(prevsum +" "+  index ); //prevsum is always going to be larger than currentsum or equal to it so i just print prev sum at the end
     }
@@ -55,12 +54,11 @@ class CoinGame
 
 
 
-    public CoinGame(int s, int r) // constructor provied by collage board
+    public CoinGame(int s, int r) // constructor provided  by collage board
 
     {
 
         startingCoins = s;
-
         maxRounds = r;
         playGame();
 

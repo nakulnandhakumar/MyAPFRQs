@@ -1,7 +1,5 @@
 package Unit3.Andrew;
 
-import org.jetbrains.annotations.Contract;
-
 import java.util.Random;
 
 public class Andrew {
@@ -53,7 +51,7 @@ class Party
             case 1: System.out.println("beef"); break;
             case 2: System.out.println("chicken"); break;
             case 3: System.out.println("pasta");break;
-            default: System.out.println("fish");
+            default: System.out.println("fish"); break;
         }
     }
 
