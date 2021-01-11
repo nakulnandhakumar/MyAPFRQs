@@ -22,7 +22,7 @@ class LongStreak
         Consecutive();
         Driver();
     }
-    private void Driver()
+    private void Driver() //driver for the recurisve loop
     {
         index =' ';
         lastsum=0;
@@ -32,30 +32,30 @@ class LongStreak
         System.out.println(lastsum + " " + index);
     }
 
-    private void Rec(int length , int postion , int currentsum)
+    private void Rec(int length , int postion , int currentsum) // recursive
     {
-        if (length == 1)
+        if (length == 1) // base case exit at last index
         {
-            return;
+            return; //exits
         }
-        if (streak.charAt(postion)==streak.charAt(postion+1))
+        if (streak.charAt(postion)==streak.charAt(postion+1)) // compares the two postions
         {
             currentsum++;
-            if (currentsum>lastsum)
+            if (currentsum>lastsum) //checks if current sum is greaterthan last sum if so setts the char at the current index
             {
-                index = streak.charAt(postion);
+                index = streak.charAt(postion); //gobal var
             }
 
         }
         else
         {
-            currentsum=1;
+            currentsum=1; //resets counter
         }
-        lastsum = Math.max(currentsum, lastsum);
-        Rec(length-1, postion+1, currentsum);
+        lastsum = Math.max(currentsum, lastsum); // gobal var
+        Rec(length-1, postion+1, currentsum); // recursive loop
     }
 
-    private void Consecutive()
+    private void Consecutive() //itertive
     {
         int currentsum= 1;
         int prevsum =0;
