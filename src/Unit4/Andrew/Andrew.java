@@ -32,30 +32,29 @@ class LongStreak
         System.out.println(lastsum + " " + index);
     }
 
-    private void Rec(int length , int postion , int currentsum) // recursive
+    private void Rec(int length , int position , int currentsum) // recursive
     {
         if (length == 1) // base case exit at last index
         {
             return; //exits
         }
-        if (streak.charAt(postion)==streak.charAt(postion+1)) // compares the two postions
+        if (streak.charAt(position)==streak.charAt(position+1)) // compares the two positions
         {
             currentsum++;
-            if (currentsum>lastsum) //checks if current sum is greaterthan last sum if so setts the char at the current index
+            if (currentsum>lastsum) //checks if current sum is greater than last sum if so setts the char at the current index
             {
-                index = streak.charAt(postion); //gobal var
+                index = streak.charAt(position); //global var
             }
-
         }
         else
         {
             currentsum=1; //resets counter
         }
         lastsum = Math.max(currentsum, lastsum); // gobal var
-        Rec(length-1, postion+1, currentsum); // recursive loop
+        Rec(length-1, position+1, currentsum); // recursive loop
     }
 
-    private void Consecutive() //itertive
+    private void Consecutive() //iterative
     {
         int currentsum= 1;
         int prevsum =0;
