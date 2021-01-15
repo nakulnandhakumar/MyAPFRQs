@@ -10,18 +10,19 @@ public class Nakul {
 
 class Consecutive{
 
-    public Consecutive() { // Default constructor so as to not return any erros
+    public Consecutive() { // Default constructor so as to not return any errors
     }
 
     public void longestStreak(String str) {
         int temp = 0;               // Initializing variables to store future temp values and total consecutive appearances and what character does it
-        String character = "";
         int length = str.length();
         int totalConsecutive = 0;
+        String character = "";
         String first;
         String second;
 
         for (int i = 0; i <= length; i++) {
+
             if ((length - i) == 0) {        // Since substrings are used, multiple if statements are required for when the substring reaches the end of the string given so that the OutOfBoundsException error is not thrown
                 first = str.substring(i);   // assigning letter in string to first
                 second = str.substring(i);  // assigning letter after first to second
@@ -35,16 +36,20 @@ class Consecutive{
                 second = str.substring(i+1, i+2);
             }
 
+
             if (first.equals(second)) {  // If the first letter equals the second letter then one is added to temp and the for statement repeats
                 temp++;
             }
+
             else {  // If the first doesn't equal the second, add one because there is still one letter that isn't accounted for
                 temp++;
+
                 if (temp > totalConsecutive) {
                     totalConsecutive = temp; // If the temp that we have been calculating is greater than the previous totalConsecutive value, store the new value
                     temp = 0;  // Reset temp value to zero
                     character = first; // Assign the character that appeared consecutively to character variable
                 }
+
                 else {
                     temp = 0;  // reset temp value even if temp is not greater than previous totalConsecutive value
                 }
