@@ -19,8 +19,8 @@ public class Nakul {
 
 class Party {
 
-    boolean rsvp; // For convenience, I have decided to initialize this as true so no errors are returned if I use this variable as a parameter
-    int selection;
+    boolean rsvp = true; // For convenience, I have decided to initialize this as true so no errors are returned if I use this variable as a parameter
+    int selection = 1;
     String option1;
     String option2;
 
@@ -67,7 +67,7 @@ class Party {
      "Sorry you can't make it."
      Write the code segment below. Your code segment should meet all specifications and conform to the examples. **/
 
-    public void foodSelection() {  // simple nested if statement, just follow the if statements and elses
+    public void foodSelection() {  // simple nested if statement, just follow the if statements and else
         if (rsvp) {
             if (selection == 1){
                 option1 = "Thanks for attending. You will be served beef.";
@@ -96,6 +96,13 @@ class Party {
         else {
             System.out.println("false");
         }
+    }
+
+    public static void main (String[] args){
+        Party party = new Party();
+        party.attendance(true);
+        party.foodTypes(1);
+        party.foodSelection();
     }
 }
 
@@ -127,6 +134,13 @@ class Draw
      * square will be len (or as large as will fit in the grid).
      */
     public void drawSquare(int x, int y, int len) {  // Just calling drawLine in logical order with logical parameters to draw lines between different points to make a square
+        if (len > y && y <= (10-x)){
+            len = y;
+        }
+        if (len > (10-x) && (10-x) <= y){
+            len = 10 - x;
+        }
+
         drawLine(x, y, x, y-len);
         drawLine(x, y-len, x+len, y-len);
         drawLine(x+len, y-len, x+len, y);
