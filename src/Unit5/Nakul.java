@@ -121,7 +121,7 @@ public class Nakul {
          return listOfPasswords.get(index);  // Gets the password at the index in the Arraylist
      }
 
-     public static void main(String[] args){
+     public static void main(String[] args){ // Implementation for testing if password generator and its methods work correctly
          PasswordGenerator passGen1 = new PasswordGenerator(4, "ps"); // Initializes both random numbers and prefixCharacter
          passGen1.generatePassword(); // Generate password for passGen1 object
          passGen1.generatePassword(); // Generate password for passGen1 object
