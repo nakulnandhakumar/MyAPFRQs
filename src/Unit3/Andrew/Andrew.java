@@ -26,8 +26,13 @@ class Party
         Random random = new Random();
         int selection= random.nextInt(3)+1;
         String option1;
-        Boolean rsvp=true; // just because
-        String option2;
+        boolean rsvp= random.nextBoolean();
+        String option2 = getOptionTwo(random.nextInt(4)); //0-3
+        attending(rsvp);
+        selctionFood(selection);
+       option1= Rvsp(rsvp,selection);
+       stringComparison(option1,option2);
+
     }
     //part a
     private void attending(boolean rv)
@@ -46,7 +51,7 @@ class Party
             case 1: System.out.println("beef"); break;
             case 2: System.out.println("chicken"); break;
             case 3: System.out.println("pasta");break;
-            default: System.out.println("fish");
+            default: System.out.println("fish"); break;
         }
     }
 
@@ -78,6 +83,16 @@ class Party
         }
 
     }
+    private String getOptionTwo(int number)
+    {
+        return switch (number) {
+            case 1 -> "Thanks for attending. You will be served beef.";
+            case 2 -> "Thanks for attending. You will be served chicken.";
+            case 3 -> "Thanks for attending. You will be served pasta.";
+            default -> "Thanks for attending. you will be served with fish.";
+        };
+    }
+
 
 
 
@@ -114,10 +129,20 @@ class Draw
      * square will be len (or as large as will fit in the grid).
      */
     public void drawSquare(int x, int y, int len) {
+     if(len>y && y<=(10-x))
+        {
+         len =y;
+        }
+        if(len>(10-x) && (10-x)<=y)
+        {
+         len = 10-x;
+        }
         drawLine(x, y, x, y-len);
         drawLine(x, y-len, x+len, y-len);
         drawLine(x+len, y-len, x+len, y);
         drawLine(x+len, y, x, y);
+        System.out.println("the area is " + len*len);
+        System.out.println("the length is " + len);
     }
 
 }
