@@ -56,10 +56,10 @@ public class Nakul {
      }
 
      public static void main(String[] args) {  // Simple implementation and object creation to test if code works.
-         Invitation invitation = new Invitation("Nakul", "12143 Deer Ridge Avenue");
+         Invitation invitation = new Invitation("Unit6.Nakul", "12143 Deer Ridge Avenue");
          System.out.println(invitation.getHostName());
          invitation.updateAddress("52956 Cherry Blossom Court");
-         invitation.sendInvitation("Andrew");
+         invitation.sendInvitation("Unit6.Andrew");
 
          Invitation invitation2 = new Invitation("29573 Heaven Road");
          System.out.println(invitation2.getHostName());
