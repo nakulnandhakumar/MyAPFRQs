@@ -3,6 +3,12 @@ package Unit3.Andrew;
 import java.util.Random;
 
 public class Andrew {
+   public static void main(String[] args)
+    {
+        Party party = new Party();
+    }
+
+
 }
 
 /** SHOW ALL YOUR WORK. REMEMBER THAT PROGRAM SEGMENTS ARE TO BE WRITTEN IN JAVA.

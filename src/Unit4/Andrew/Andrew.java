@@ -80,6 +80,8 @@ class LongStreak
 
 }
 
+
+
 class CoinGame
 {
 
