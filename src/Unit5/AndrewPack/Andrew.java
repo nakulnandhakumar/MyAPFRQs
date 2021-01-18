@@ -1,4 +1,4 @@
-package Unit5.Andrew;
+package Unit5.AndrewPack;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -7,14 +7,14 @@ import java.util.stream.IntStream;
 public class Andrew {
     public static void main(String[] args)
     {
-        Invitation invitation = new Invitation("andrew", "123 gosuckmynuts");
+        Invitation invitation = new Invitation("andrew", "123 billboard");
         System.out.println(invitation.getHostName());
-        invitation.updateAdresss("dont suck my nuts");
+        invitation.updateAdresss("123 notbillboard");
         System.out.println(invitation.greating("Void"));
         PasswordGenerator gen1 = new PasswordGenerator("pre", 6);
         gen1.genPass();
         gen1.lamdba();
-        PasswordGenerator gen2 = new PasswordGenerator(4);
+        PasswordGenerator gen2 = new PasswordGenerator(6);
         gen2.Driver();
         System.out.println(gen1.getCount() + " " + gen2.getCount());
         gen1.printAllPasswords();
@@ -104,7 +104,7 @@ class PasswordGenerator
         arrayOfPasswords.add(password[0]);
 
     }
-    private void recusive(int length , String password)
+    private void recursive(int length , String password)
     {
         if (length == 0)
         {
@@ -113,13 +113,13 @@ class PasswordGenerator
         }
         Random rand = new Random();
         password = password.concat(String.valueOf(rand.nextInt(10)));
-        recusive(--length, password);
+        recursive(--length, password);
     }
     public void Driver()
     {
         int local = this.length;
         String password = prefix;
-        recusive(local,password);
+        recursive(local,password);
     }
 
     public int getCount() {
