@@ -22,27 +22,27 @@ public class Nakul {
  * Write the code segment as described above. The code segment must use an enhanced for loop to earn full credit. **/
 
 class Ing {
-    String[] words;
-    int lengthOfWord;
+    String[] words;  // Initialize array to store words for ending test
+    int lengthOfWord; // variable for length of word
 
     public Ing(String[] arr){
         words = arr;
-    }
+    } // Constructor to assign strings (words) from inputted array to words array
 
     public void printWordsEndingInIng(){
-        for (String word: words){
-            lengthOfWord = word.length();
+        for (String word: words){  // For each loop iterates through all words in the array words until none are left
+            lengthOfWord = word.length(); // Stores length of word
 
-            if (lengthOfWord < 3){
+            if (lengthOfWord < 3){  // Because any words less than three characters will not be printed in any condition, go to the next word
                 continue;
             }
-            if (word.substring(lengthOfWord - 3).equals("ing")){
-                System.out.println(word);
+            if (word.substring(lengthOfWord - 3).equals("ing")){ // Substring that takes the last three letters of the word and checks
+                System.out.println(word); // Prints if above condition is met
             }
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args){  // Implementation
         String[] arrOfStrings = {"a", "run", "strike", "man", "coming", "dude", "mistering", "through", "sipping", "listening"};
         Ing ing = new Ing(arrOfStrings);
         ing.printWordsEndingInIng();
@@ -83,7 +83,7 @@ class Payroll {
 
             for (int j = 0; j < copyOfItemsSold.length - 1; j++){
 
-                if (copyOfItemsSold[j] > copyOfItemsSold[j+1]){
+                if (copyOfItemsSold[j] > copyOfItemsSold[j+1]){  // The swapping of the bubble sort using temp variables
                     temp = copyOfItemsSold[j];
                     copyOfItemsSold[j] = copyOfItemsSold[j+1];
                     copyOfItemsSold[j+1] = temp;
@@ -95,7 +95,7 @@ class Payroll {
         for (int i = 0; i < copyOfItemsSold.length - 2; i++){
             salesExcludingMinMax += copyOfItemsSold[i+1];
         }
-        bonusThreshold = (double) (salesExcludingMinMax) / (copyOfItemsSold.length-2);
+        bonusThreshold = (double) (salesExcludingMinMax) / (copyOfItemsSold.length-2); // Calculating bonus threshold
         System.out.println("Bonus Threshold: "+bonusThreshold); //Should print out 31.333 with the given itemsSold array. This is for testing.
         return bonusThreshold;
     }
