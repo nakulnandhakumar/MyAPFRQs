@@ -134,6 +134,7 @@ class PayRoll
             }
 
         }
+        System.out.println(Arrays.toString(wages));
         /* To be implemented in part (b) */
 
     }

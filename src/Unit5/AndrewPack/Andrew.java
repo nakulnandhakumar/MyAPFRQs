@@ -35,11 +35,9 @@ class Invitation
 
 
     public Invitation(String n, String a)
-
     {
 
         hostName = n;
-
         address = a;
 
     }
