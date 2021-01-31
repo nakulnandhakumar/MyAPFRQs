@@ -11,6 +11,8 @@ public class Andrew {
         ing.printerJava();
         ing.printerMadeByme();
         ing.lambda();
+        PayRoll payRoll = new PayRoll();
+        payRoll.computeWages(8.50,1.20);
     }
 
 }
@@ -69,7 +71,7 @@ class Ing
 
 class PayRoll
 {
-    private int[] itemsSold; // number of items sold by each employee
+    private int[] itemsSold = {20,10,13,12,10,9,8,85} ;// number of items sold by each employee
 
     private double[] wages; // wages to be computed in part (b)
 
@@ -121,6 +123,7 @@ class PayRoll
     public void computeWages(double fixedWage, double perItemWage)
 
     {
+        wages= new double[itemsSold.length];
         double threshold = computeBonusThreshold();
 
         for (int i = 0; i <itemsSold.length ; i++) {
