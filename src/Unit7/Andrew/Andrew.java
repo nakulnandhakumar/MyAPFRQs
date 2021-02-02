@@ -3,6 +3,8 @@ package Unit7.Andrew;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -10,13 +12,18 @@ public class Andrew {
    public static void main(String[] args)
    {
        Username username = new Username("john","smith");
+       String[] strings = {"smithj","smithjo"};
+       username.setAvailUsernames(strings);
+       username.SetavailUsernamesTradtional();
    }
+
+
 
 }
 
 class Username
 {
-    String[] array = {"smithj","smithjo"};
+    String[] array = {"smithj","smithjo"}; // tester
     private ArrayList<String> possiblenames;
     public Username(String Firstname, String Lastname)
     {
@@ -44,6 +51,27 @@ class Username
         list.forEach(s -> possiblenames.remove(s));
        System.out.println(possiblenames);
     }
+    public void setAvailUsernames(String[] usednames)
+    {
+        List<String> list = possiblenames.stream().filter(s-> Arrays.stream(usednames).noneMatch(Predicate.isEqual(s))).collect(Collectors.toList());
+        possiblenames = (ArrayList<String>) list;
+        System.out.println(possiblenames);
+    }
+    public void SetavailUsernamesTradtional()
+    {
+        ListIterator<String> listIterator = possiblenames.listIterator();
+        while (listIterator.hasNext())
+        {
+            if (isUsed(listIterator.next()))
+            {
+                listIterator.remove();
+            }
+        }
+        System.out.println(possiblenames);
+
+    }
+
+
 
 
 
