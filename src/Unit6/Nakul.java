@@ -62,7 +62,7 @@ class Ing {
  You will write two methods in the Payroll class below. **/
 
 class Payroll {
-    private int[] itemsSold = {19, 32, 15, 54, 23, 49, 39, 26}; // number of items sold by each employee. Instantiated by Nakul Nandhakumar for testing and implementation purposes
+    private int[] itemsSold = {19, 32, 15, 54, 23, 49, 39, 26}; // number of items sold by each employee. Instantiated by Unit9.Nakul.Nakul Nandhakumar for testing and implementation purposes
     private double[] wages = new double[itemsSold.length]; // wages to be computed in part (b)
     double bonusThreshold;
 
