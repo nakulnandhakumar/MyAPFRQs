@@ -1,6 +1,5 @@
-package Unit2;
-import java.util.*;
-import java.math.*;
+package Unit2.Andrew;
+
 public class AndrewUnit2 {
 
   public static void main(String[] args)
