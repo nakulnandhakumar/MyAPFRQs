@@ -14,8 +14,8 @@ class NumberSystem {
      * Returns the greatest common factor of a and b, as described in part (a).
      */
 
-    /** PART A
-     * The greatest common factor can be computed using the following rules.
+    /** PART A **/
+    /** The greatest common factor can be computed using the following rules.
      * Case I: If a is evenly divisible by b, then the GCF is b.
      * Case II: If a is not evenly divisible by b, then the GCF of a and b is equal to the GCF of b and the remainder when a is divided by b.
      * If the rule in case II is repeatedly applied, it is guaranteed to eventually result in case I.
@@ -36,6 +36,10 @@ class NumberSystem {
      */
 
     /** PART B **/
+    /** If the numerator is evenly divisible by the denominator, then the fraction reduces to the result when the numerator is divided by the denominator.
+     If the numerator is not evenly divisible by the denominator, then the
+     reduced numerator will be equal to the numerator divided by the GCF of the numerator and the denominator.
+     Similarly, the reduced denominator will be equal to the denominator divided by the GCF of the numerator and the denominator. **/
 
     public static void reduceFraction(int numerator, int denominator) {
         int GCF;  // temp variable to store GCF for later divisions
