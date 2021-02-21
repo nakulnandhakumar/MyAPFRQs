@@ -135,7 +135,7 @@ class Animal {
 
     public static void main(String[] args) {
         Animal lisa = new Animal("carnivore", "lion", "Lisa"); // Creating lisa the lion is a carnivore
-        System.out.println(lisa.toString()); // Correctly prints lisa the lion
+        System.out.println(lisa); // Correctly prints lisa the lion
     }
 }
 
@@ -154,8 +154,9 @@ class Herbivore extends Animal{
 
     public static void main(String[] args) {  // Implementation shows code works exactly as it is supposed to
         Herbivore gary = new Herbivore("giraffe", "Gary");  // Creating herbivore class object
-        System.out.println(gary.toString());  // Calling toString which calls toString method of superclass
+        System.out.println(gary);  // Calling toString which calls toString method of superclass
     }
+
 }
 
 /** The Elephant class is a subclass of Herbivore.
@@ -184,6 +185,6 @@ class Elephant extends Herbivore{
 
     public static void main(String[] args) { // Implementation shows that code works.
         Elephant percy = new Elephant("Percy", 2.0);
-        System.out.println(percy.toString());
+        System.out.println(percy);
     }
 }
